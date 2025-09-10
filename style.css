@@ -1,5 +1,5 @@
 :root{
-  --bg:#0f172a; --card:#0b1220; --accent:#0ea5a4; --muted:#94a3b8; --holiday:#ff4d6d; --birthday:#ffd166;
+  --bg:#0f172ab7; --card:#0b1220; --accent:#0ea5a4; --muted:#94a3b8; --holiday:#ff4d6d; --birthday:#ffd166;
   --text:#e6eef6;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Open Sans", "Helvetica Neue", Arial;
 }
@@ -11,8 +11,12 @@ html,body{
     scroll-behavior: smooth;
 }
 body{
-    margin:24px;background:linear-gradient(180deg,var(--bg),#071026);
+    margin:24px;background:linear-gradient(180deg,var(--bg),#0710269d);
     color:var(--text);
+    background-image: url('/Pictures/FormulaOfLoveTwice.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .container{ 
     max-width:1200px;
@@ -25,9 +29,35 @@ body{
     margin-bottom:18px;
     gap:12px
 }
+.homeNavbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.938);
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.homeNavbar a:hover {
+    color: #0ea5a4;
+}
+.homeNavbar a:active {
+    color:#ff4d6d;
+}
 h1{
-    font-size:22px;
+    color: #e6eef6;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.938);
+    font-size:22px; 
     margin:0;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 0.8s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 
 .grid {
@@ -44,7 +74,7 @@ h1{
 }
 
 .month {
-  background: #0e1525;
+  background: #0e1525a9;
   padding: 30px; /* bigger padding */
   border-radius: 15px;
   font-size: 1.3rem; /* bigger text */
@@ -57,17 +87,43 @@ h1{
 }
 
 .month {
-  background: #0e1525; /* solid dark background */
+  background: #0e15259a; /* solid dark background */
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(2,6,23,0.6);
   border: 1px solid rgba(255,255,255,0.03);
+  transition: .3s;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.month a {
+    text-decoration: none;
+    color: #0ea5a4;
+}
+.month a:hover {
+    text-decoration: none;
+    color: #ffd166;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.month a:active {
+    text-decoration: none;
+    color: #ff4d6d;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 
 .month h3 {
     margin:0 0 8px;
     font-size:16px;
-    text-align:center
+    text-align:center;
+    text-shadow: 0 4px 10px rgba(0, 155, 160, 0.938);
 }
 table {
     width:100%;
@@ -123,14 +179,97 @@ thead th {
 }
 /* !!!!!!!!!!!!!!!!!!!!!! -----------------------------  Jett2Holidays  ----------------------------- !!!!!!!!!!!!!!!!!! */
 
-.holiday-layout {
-            width: 100%;
-            display: grid;
-            grid: "header header header" auto "leftSide body rightSide" 1fr "footer footer footer" auto / auto 1fr auto;
-            gap: 8px;
+.holidays {
+    background: rgba(0,0,0,0.4);
+    max-width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    transition: .3s;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
-.holiday-header { grid-area: header; }
-.holiday-leftSide { grid-area: leftSide; }
-.holiday-body { grid-area: body; }
-.holiday-rightSide { grid-area: rightSide; }
-.holiday-footer { grid-area: footer; }
+.holiday-img {
+  width: 500px;
+  height: 500px;
+  margin-right: 50px;
+  overflow: hidden;
+  transition: .2s;
+  opacity: 0;
+  animation: slideRight 0.5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+.holiday-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.holiday-details {
+    max-width: 700px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!! -----------------------------  Keyframes Animation  ----------------------------- !!!!!!!!!!!!!!!!!! */
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
