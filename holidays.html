@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        .holiday-layout {
+            width: 100%;
+            display: grid;
+            grid: "header header header" auto "leftSide body rightSide" 1fr "footer footer footer" auto / auto 1fr auto;
+            gap: 8px;
+        }
+        .holiday-header { grid-area: header; }
+        .holiday-leftSide { grid-area: leftSide; }
+        .holiday-body { grid-area: body; }
+        .holiday-rightSide { grid-area: rightSide; }
+        .holiday-footer { grid-area: footer; }
+    </style>
+</head>
+<body>
+    <section class="holiday-layout">
+        <div class="holiday-header">1</div>
+        <div class="holiday-leftSide">2</div>
+        <div class="holiday-body">3</div>
+        <div class="holiday-rightSide">4</div>
+        <div class="holiday-footer">5</div>
+    </section>
+</body>
+</html>
