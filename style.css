@@ -13,7 +13,7 @@ html,body{
 body{
     margin:24px;background:linear-gradient(180deg,var(--bg),#0710269d);
     color:var(--text);
-    background-image: url('/Pictures/FormulaOfLoveTwice.jpg');
+    background-image: url('/Pictures/FormulaOfLove.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -272,4 +272,5 @@ thead th {
         transform: scale(1);
         opacity: 1;
     }
+
 }
