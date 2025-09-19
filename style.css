@@ -5,6 +5,7 @@
 }
 * {
     box-sizing:border-box;
+    scroll-behavior: smooth;
 }
 html,body{
     height:100%;
@@ -13,10 +14,20 @@ html,body{
 body{
     margin:24px;background:linear-gradient(180deg,var(--bg),#0710269d);
     color:var(--text);
-    background-image: url('Pictures/FormulaOfLoveTwice.jpg');
+    background-image: url('https://a-static.besthdwallpaper.com/twice-all-members-in-i-got-you-album-shoot-wallpaper-2880x1800-126671_8.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
+}
+#scrollIcon svg path{
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+#scrollIcon svg path:hover {
+    fill: #ffd166;
 }
 .container{ 
     max-width:1200px;
@@ -186,9 +197,11 @@ thead th {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     margin-top: 30px;
-    padding: 100px;
+    padding: 50px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     transition: .3s;
     opacity: 0;
@@ -198,7 +211,7 @@ thead th {
 .holiday-img {
   width: 500px;
   height: 500px;
-  margin-right: 50px;
+  margin-right: 0;
   overflow: hidden;
   transition: .2s;
   opacity: 0;
@@ -212,7 +225,12 @@ thead th {
   border-radius: 20px;
 }
 .holiday-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 700px;
+    text-align: center;
+    align-items: center;
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!! -----------------------------  Keyframes Animation  ----------------------------- !!!!!!!!!!!!!!!!!! */

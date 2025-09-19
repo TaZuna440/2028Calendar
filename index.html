@@ -4,7 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_up" />
   <title>Philippine Calendar</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    // Check URL for ?scroll=section2
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get("scroll");
+
+    if (section) {
+      const target = document.getElementById(section);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+</script>
+
 </head>
 <body>
   <div class="container">
@@ -12,7 +28,7 @@
       <h1>Philippine — Calendar 2028</h1>
       <nav class="homeNavbar">
             <a href="index.html" style="--i:1;" target="_self">Calendar</a>
-            <a href="holidays.html" style="--i:2;" target="_self">Holidays</a>
+            <a href="#container2" style="--i:2;" target="_self">Holidays</a>
         </nav>
     </div>
 
@@ -30,7 +46,7 @@
                 <td class="empty"></td>
                 <td class="empty"></td>
                 <td class="empty"></td>
-                <td class="holiday"><a href="holidays.html#new-year" class="open-btn">1</a></td>
+                <td class="holiday"><a href="#new-year" class="open-btn">1</a></td>
             </tr>
             <tr><td class="wk">2</td>
                 <td><span>2</span></td>
@@ -124,7 +140,7 @@
                 <td><span>26</span></td>
             </tr>
             <tr><td class="wk">5</td>
-                <td class="holiday"><a href="holidays.html#eidul-fitar" class="open-btn">27</a></td>
+                <td class="holiday"><a href="#eidul-fitar" class="open-btn">27</a></td>
                 <td><span>28</span></td>
                 <td><span>29</span></td>
                 <td class="empty"></td>
@@ -216,12 +232,12 @@
                 <td><span>8</span></td>
             </tr>
             <tr><td class="wk">3</td>
-                <td class="holiday"><a href="#eidul-fitar" class="open-btn">9</a></td>
+                <td class="holiday"><a href="#day-of-valor" class="open-btn">9</a></td>
                 <td><span>10</span></td>
                 <td><span>11</span></td>
                 <td><span>12</span></td>
-                <td><span>13</span></td>
-                <td><span>14</span></td>
+                <td class="holiday"><a href="#moundy-thursday" class="open-btn">13</a></td>
+                <td class="holiday"><a href="#good-friday" class="open-btn">14</a></td>
                 <td><span>15</span></td>
             </tr>
             <tr><td class="wk">4</td>
@@ -262,11 +278,11 @@
           <tbody>
             <tr><td class="wk">1</td>
                 <td class="empty"></td>
-                <td><span>1</span></td>
+                <td class="holiday"><a href="#labor-day" class="open-btn">1</a></td>
                 <td><span>2</span></td>
                 <td><span>3</span></td>
                 <td><span>4</span></td>
-                <td><span>5</span></td>
+                <td class="holiday"><a href="#eid-al-adha" class="open-btn">5</a></td>
                 <td><span>6</span></td>
             </tr>
             <tr><td class="wk">2</td>
@@ -334,8 +350,8 @@
             </tr>
             <tr><td class="wk">3</td>
                 <td><span>11</span></td>
-                <td><span>12</span></td>
-                <td><span>3</span></td>
+                <td class="holiday"><a href="#independence-day" class="open-btn">12</a></td>
+                <td><span>13</span></td>
                 <td><span>14</span></td>
                 <td><span>15</span></td>
                 <td><span>16</span></td>
@@ -391,7 +407,7 @@
                 <td><span>10</span></td>
                 <td><span>11</span></td>
                 <td><span>12</span></td>
-                <td><span>3</span></td>
+                <td><span>13</span></td>
                 <td><span>14</span></td>
                 <td><span>15</span></td>
             </tr>
@@ -451,7 +467,7 @@
                 <td><span>12</span></td>
             </tr>
             <tr><td class="wk">3</td>
-                <td><span>3</span></td>
+                <td><span>13</span></td>
                 <td><span>14</span></td>
                 <td><span>15</span></td>
                 <td><span>16</span></td>
@@ -470,7 +486,7 @@
             </tr>
             <tr><td class="wk">5</td>
                 <td><span>27</span></td>
-                <td><span>28</span></td>
+                <td class="holiday"><a href="#national-heroes-day" class="open-btn">28</a></td>
                 <td><span>29</span></td>
                 <td><span>30</span></td>
                 <td class="empty"></td>
@@ -507,7 +523,7 @@
                 <td><span>10</span></td>
                 <td><span>11</span></td>
                 <td><span>12</span></td>
-                <td><span>3</span></td>
+                <td><span>13</span></td>
                 <td><span>14</span></td>
                 <td><span>15</span></td>
                 <td><span>16</span></td>
@@ -613,7 +629,7 @@
             </tr>
             <tr><td class="wk">3</td>
                 <td><span>12</span></td>
-                <td><span>3</span></td>
+                <td><span>13</span></td>
                 <td><span>14</span></td>
                 <td><span>15</span></td>
                 <td><span>16</span></td>
@@ -634,7 +650,7 @@
                 <td><span>27</span></td>
                 <td><span>28</span></td>
                 <td><span>29</span></td>
-                <td><span>30</span></td>
+                <td class="holiday"><a href="#bonifacio-day" class="open-btn">30</a></td>
                 <td class="empty"></td>
                 <td class="empty"></td>
             </tr>
@@ -669,7 +685,7 @@
                 <td><span>10</span></td>
                 <td><span>11</span></td>
                 <td><span>12</span></td>
-                <td><span>3</span></td>
+                <td><span>13</span></td>
                 <td><span>14</span></td>
                 <td><span>15</span></td>
                 <td><span>16</span></td>
@@ -685,12 +701,12 @@
             </tr>
             <tr><td class="wk">5</td>
                 <td><span>24</span></td>
-                <td><span>25</span></td>
+                <td class="holiday"><a href="#christmas-day" class="open-btn">25</a></td>
                 <td><span>26</span></td>
                 <td><span>27</span></td>
                 <td><span>28</span></td>
                 <td><span>29</span></td>
-                <td><span>30</span></td>
+                <td class="holiday"><a href="#rizal-day" class="open-btn">30</a></td>
                 <td class="empty"></td>
             </tr>
             <tr><td class="wk">6</td>
@@ -706,5 +722,117 @@
         </table>
       </div>
     </div>
+    <section class="container2" id="container2">
+      <section class="holidays" id="new-year">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/philippines-newyeard2.jpg" alt="new-year-fireworks"></div>
+        <div class="holiday-details">
+          <h3>New Year</h3>
+          <p>Many Filipino people unite on New Year’s Eve, which is on December 31, to celebrate a midnight meal known as the Media Noche. It is also common to stay awake to greet the coming of the New Year. New Year’s Day is also characterized by Filipinos lighting fireworks and making a lot of noise to drive away evil spirits. This belief originated from the Chinese.</p>
+          <p>The elderly encourage children to jump at the stroke of midnight so that they would grow up tall. Many people display 12 circular fruits and wear clothing with polka dots to symbolize money. It is also popular practice to open all the doors and windows at the stroke of midnight to let in the good luck. Many Filipino families also read the Christian bible and attend a church midnight mass. It is common for many Filipinos to blend religion and superstition in celebrating New Year’s Day.</p>
+          <p>The New Year’s Day/New Year’s Eve celebrations start on December 31 and continue through to January 1. New Year’s Day in the Philippines is short but uniquely celebrated throughout the country. This is also the time of the year when many Filipino families get together and strengthen their family ties. New Year’s Day in the Philippines is a joyful holiday that is characterized with the intermarriage of religion and paganism which are the attributes of a once Hispanic Philippine Society.</p>
+          <p>Filipinos symbolize New Year’s Day with their visions of how the start of the New Year opens opportunities for a bountiful life.</p>
+        </div>
+      </section>
+      <section class="holidays" id="eidul-fitar">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/eid-ul-fitr-food.jpg" alt="eidul-fitar-celebration"></div>
+        <div class="holiday-details">
+          <h3>Eidul Fitar</h3>
+          <p>Eidul-Fitar is a public holiday. It is a day off for the general population, and schools and most businesses are closed.</p>
+          <p>For Muslims around the world, Eid ul Fitr marks the end of Ramadan, the Islamic holy month of fasting and prayer. It is one of the largest and most important celebrations in the Islamic calendar.</p>
+          <p>The New Year’s Day/New Year’s Eve celebrations start on December 31 and continue through to January 1. New Year’s Day in the Philippines is short but uniquely celebrated throughout the country. This is also the time of the year when many Filipino families get together and strengthen their family ties. New Year’s Day in the Philippines is a joyful holiday that is characterized with the intermarriage of religion and paganism which are the attributes of a once Hispanic Philippine Society.</p>
+          <p>Eid ul Fitr falls on the first day of Shawwal, the 10th month of the Islamic calendar. Since Muslims follow a lunar calendar, where a year is approximately 11 days shorter than a solar year, Eid falls on an earlier date in the western Gregorian calendar each year. A new month in the Muslim calendar begins when the Waxing Crescent Moon becomes visible after the New Moon phase. An authorized committee has to confirm the Moon sighting. While Eid ul Fitr itself lasts only one day, the day following the holy month of Ramadan, it is also celebrated in the days that follow in some countries and Muslim communities. Festivities can last for up to three days.</p>
+        </div>
+      </section>
+      </section>
+      <section class="holidays" id="day-of-valor">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/dayofvalor.jpg" alt="day-of-valor-pic"></div>
+        <div class="holiday-details">
+          <h3>The Day of Valor</h3>
+          <p>Araw ng Kagitingan is a non-working holiday that is part of a long weekend in the Philippines. World War II veterans parade in different cities in the Philippines on this day. There are small parades in different localities in the Philippines but the Araw ng Kagitingan’s main highlight occurs when the country’s president gives a speech at the Mt Samat shrine, in the Bataan province, to commemorate the heroism of the Filipinos and American troops during the World War II.</p>
+          <p>Araw ng Kagitingan is a regular holiday in the Philippines and occurs on or around April 9. Many streets are closed and public transport routes may be redirected to give way for parades. Malls and other leisure areas remain open and most people may go to these places and use this day as a family day.</p>
+          <p>he Day of Valor, also known as Araw ng Kagitingan, commemorates the heroism of Filipinos and American Soldiers when the Japanese occupied the Philippines during World War II. Major General Edward P. King, of the United States Army, was forced to surrender more than 76,000 Filipinos, Chinese and American soldiers to the Japanese at dawn on April 9, 1942. The soldiers were forced to take a 90-mile (about 145 kilometers) hike to Camp O’Donnell in San Fernando. Thousands of prisoners died during the hike (also known as the Bataan Death March) due to starvation, dehydration and diseases before they could reach the camp.</p>
+        </div>
+      </section>
+      <section class="holidays" id="moundy-thursday">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/maundythursdayphilippines.jpg" alt="mound-thursday-pic"></div>
+        <div class="holiday-details">
+          <h3>Moundy Thursday</h3>
+          <p>Maundy Thursday marks the event before Jesus Christ was crucified on the cross. Aside from fasting, most Filipinos refrain from activities such as drinking alcohol, eating meat and intercourse with their partners. Maundy Thursday is highlighted by the re-enactment of the Last Supper, which is organized by churches. It is customary for Filipinos to visit seven churches on this particular day. This is called Visita Iglesia which is a Spanish word for “to visit churches”. Some people visit 14 churches to symbolize the 14 stations of the cross.</p>
+          <p>Maundy Thursday is a public holiday in the Philippines. Most businesses are closed from Maundy Thursday until Black Saturday (also known as Holy Saturday). Television and radio stations also closed during this time but they do pre-programmed broadcast special shows that are themed for the Easter holiday period. Cable channels continue their normal programs. Public transport is reduced but there are some public transport services that operate during this time of the year. Those who work on Maundy Thursday get paid double as stipulated in the Labor Code of the Philippines.</p>
+        </div>
+      </section>
+      <section class="holidays" id="good-friday">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/goodfridayphilippines.jpg" alt="good-friday-pic"></div>
+        <div class="holiday-details">
+          <h3>Good Friday</h3>
+          <p>Good Friday is a part of the religious holiday week in the lead up to Easter Sunday in the Philippines. This is the time when many Filipinos refrain from engaging in worldly activities such as listening to loud music or drinking alcohol. Most Catholics refrain from eating meat during this day and engage in fasting and prayer.</p>
+          <p>Many people also attend church services and take part in the Acts of Reparation to Jesus Christ or the Station of the Cross.  The Station of The Cross depicts the last hours of the Passion of Jesus, and the Filipinos use these stations to meditate on Jesus’ sufferings. Some men in different localities in the Philippines re-enact the penance of Jesus Christ by going as far as crucifying themselves on the cross.</p>
+          <p>Government offices, schools and most major establishments such as shopping malls are closed on Good Friday. Holiday destinations such as beaches and hotels are busy with tourists and travelers. public transport is reduced so those wishing to travel will need to plan ahead of time.</p>
+        </div>
+      </section>
+      <section class="holidays" id="labor-day">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/women-parade-signs.jpg" alt="labor-day-pic"></div>
+        <div class="holiday-details">
+          <h3>Labor Day</h3>
+          <p>Labor Day has deep roots in the 130 years of the labor movement and its efforts to improve workers’ conditions across the globe. Some argue that it is just as relevant today to highlight the challenges workers still encounter.</p>
+          <p>With the growth of the Industrial Revolution came the demand for labor and trade unions. Around the 1850s, eight-hour movements across the world aimed to reduce the working day from ten to eight hours. At its first congress in 1886, the American Federation of Labour called for a general strike on May 1 to demand an eight-hour day, which culminated in what is known today as the Haymarket riot.</p>
+          <p>At the demonstration in Chicago, an unidentified bomb went off in the crowd, and the police opened fire. The altercation killed several police officers and civilians, and more than 60 police officers and 30 to 40 civilians were injured. In the aftermath, civilian sympathy landed with the police, and hundreds of labor leaders and sympathizers were rounded up; some were sentenced to death by hanging. Employers regained control of workers, and ten or more hour workdays became the norm again.</p>
+        </div>
+      </section>
+      <section class="holidays" id="eid-al-adha">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/sacrifice-sheep.jpg" alt="eid-al-adha-pic"></div>
+        <div class="holiday-details">
+          <h3>Eid al-Adha</h3>
+          <p>The Quran tells the story of the prophet Ibrahim who Allah (God) commands to kill his son, Ismail, to prove his obedience. As Ibrahim prepares for the sacrifice, Allah replaces Ismail with a ram to be slaughtered in his stead. Eid al-Adha, the Feast of Sacrifice, is a commemoration of Ibrahim’s act of obedience and his willingness to follow God’s command without question.</p>
+          <p>The day usually starts with communal prayer (Eid Salaah). Muslims congregate at the local mosque after sunrise to say special Eid prayers and hear a sermon.</p>
+          <p>A lavish meal is another integral part of this Muslim holiday. Since many traditional Eid al-Adha dishes are savory, it is sometimes referred to as the salty Eid—in contrast to Eid al-Fitr, which is called the “sweet Eid” or “Sugar Feast.”</p>
+        </div>
+      </section>
+      <section class="holidays" id="independence-day">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/philippines-flag.jpg" alt="independence-day-pic"></div>
+        <div class="holiday-details">
+          <h3>Independence Day</h3>
+          <p>Independence Day is a day when many people, including government officials, employees, and students, participate in nationwide parades.  However, the main highlight is the police and military parade in Manila headed by the country’s incumbent president, followed by a speech and a 21-gun salute.  Many Filipinos spend the day in parks and malls. Many Filipino communities in other countries also observe the nation’s Independence Day celebrations.</p>
+          <p>The Philippine’s Independence Day is a national holiday so government offices are closed.  There are absolutely no classes in all schools.  Many business establishments are closed except shopping centers. Public transport such as buses, passenger jeeps, and tricycles still operate but their routes may be limited due to the closure of streets used for parades.</p>
+          <p>The annual June 12 observance of Philippine’s Independence Day came into effect after past President Diosdado Macapagal signed the Republic Act No. 4166 regarding this matter on August 4, 1964.  This Act legalized the holiday, which is based on the Declaration of Independence on June 12, 1898 by General Emilio Aguinaldo and Filipino revolutionary forces from the Spanish colonization.  The Philippines’ flag was raised and its national anthem was played for the first time in 1898.</p>
+        </div>
+      </section>
+      <section class="holidays" id="national-heroes-day">
+        <div class="holiday-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/2716Fort_Bonifacio%2C_Taguig_City_05.jpg/1280px-2716Fort_Bonifacio%2C_Taguig_City_05.jpg" alt="national-heroes-day-pic"></div>
+        <div class="holiday-details">
+          <h3>National Heroes Day</h3>
+          <p>National Heroes Day (Araw ng mga Bayani) is a public holiday in the Philippines celebrated on the last Monday of August to honor the country's heroes who fought for its freedom and independence.</p>
+          <p>The holiday commemorates the "Cry of Pugad Lawin" on August 23, 1896, which marked the start of the Philippine Revolution against Spanish rule. Celebrations often include parades, visits to national shrines and monuments, and ceremonies to remember both famous and unnamed heroes.</p>
+        </div>
+      </section>
+      <section class="holidays" id="bonifacio-day">
+        <div class="holiday-img"><img src="https://datetimeonline.com/imgfiles/holidays/philippines/bonifacio-day.jpg" alt="bonifacio-day-pic"></div>
+        <div class="holiday-details">
+          <h3>Bonifacio Day</h3>
+          <p>Bonifacio Day in the Philippines is a national public holiday celebrated annually on November 30 to commemorate the birth anniversary of Andres Bonifacio, a key figure in the Philippine Revolution and the founder of the Katipunan.</p>
+          <p>This holiday honors his pivotal role in initiating the revolt against Spanish colonial rule and is marked by national events and ceremonies, often at the Bonifacio National Monument in Caloocan City.</p>
+          <p>The day serves as a reminder of his bravery, ideals, and his crucial part in the fight for Philippine independence.</p>
+        </div>
+      </section>
+      <section class="holidays" id="christmas-day">
+        <div class="holiday-img"><img src="https://c.tadst.com/gfx/750w/christmas.jpg" alt="christmas-day-pic"></div>
+        <div class="holiday-details">
+          <h3>Christmas Day</h3>
+          <p>Christmas Day is a holiday in many, but not all, countries. Many homes have Christmas trees and other decorations in the weeks leading to Christmas Day. Some also have Advent Calendars. Some workplaces hold Christmas parties prior to December 25. Festive activities include exchanging presents, singing Christmas songs, going to parties.</p>
+          <p>It's a special time when children get presents from family, friends and Santa Claus, or Father Christmas. Christmas cards are also given or sent out prior to Christmas Day.</p>
+          <p>For some, Christmas is an exclusive family affair, while others invite friends to a Christmas buffet or pot luck meal. Churches have special services and may include a crèche or miniature Nativity scene.</p>
+        </div>
+      </section>
+      <section class="holidays" id="rizal-day">
+        <div class="holiday-img"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/119th_Rizal_Day_commemoration.jpg" alt="rizal-day-pic"></div>
+        <div class="holiday-details">
+          <h3>Rizal Day</h3>
+          <p>Rizal Day is a national public holiday in the Philippines observed on December 30 to commemorate the life, martyrdom, and legacy of Dr. Jose Rizal, the country's national hero.</p>
+          <p>The day marks the anniversary of his execution in 1896 by the Spanish colonial government. Celebrations typically include flag-raising ceremonies and wreath-laying at Rizal monuments, honoring his advocacy for education, reform, and freedom, and his role in inspiring Filipino nationalism and the fight for independence.</p>
+          <p>Rizal Day was first instituted with a decree dated December 20, 1898, signed by President Emilio Aguinaldo in Malolos, Bulacan, celebrating December 30, 1898, as a national day of mourning for Rizal and all the victims of the Spanish colonial rule of the Philippines.</p>
+        </div>
+      </section>
+    </section>
+    <a href="#" id="scrollIcon"><svg xmlns="http://www.w3.org/2000/svg" height="100px" viewBox="0 -960 960 960" width="100px" fill="#ff4d6d" style="position: fixed; right: 0; top: 90%;"><path d="M440-320h80v-168l64 64 56-56-160-160-160 160 56 56 64-64v168Zm40 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg></a>  
 </body>
 </html>
